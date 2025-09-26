@@ -1,0 +1,10 @@
+scikit-learn==1.3
+pandas
+numpy
+matplotlib
+seaborn
+shap
+eli5
+jupyter
+joblib
+wordcloud
