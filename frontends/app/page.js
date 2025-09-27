@@ -25,7 +25,7 @@ export default function Home() {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/predict`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}predict`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ description: text }), 
