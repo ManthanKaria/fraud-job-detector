@@ -174,14 +174,13 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="mt-20 mb-6 text-sm text-gray-300">
-        Made with ❤️ by Manthan |
-      // {" "}
-        // <a
-        //   href="https://your-resume-link.com"
-        //   className="underline text-cyan-400 hover:text-cyan-500"
-        // >
-        //   Resume
-        // </a>{" "}
+        Made with ❤️ by Manthan |{" "}
+        <a
+          href="https://www.linkedin.com/in/manthankaria/"
+          className="underline text-cyan-400 hover:text-cyan-500"
+        >
+          LinkedIn
+        </a>{" "}
         |{" "}
         <a
           href="https://github.com/ManthanKaria"
