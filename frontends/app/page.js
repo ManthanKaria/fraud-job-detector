@@ -25,16 +25,17 @@ export default function Home() {
     e.preventDefault();
     setLoading(true);
     try {
-      // const res = await axios.post("http://127.0.0.1:8000/predict", {
-      //   description: text,
-      // }
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/predict`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ description }),
+        body: JSON.stringify({ description: text }), 
       });
 
-      const { fraudulent, confidence, cleaned_text } = res.data;
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const { fraudulent, confidence, cleaned_text } = await response.json();
       setResult({ fraudulent, confidence, cleaned_text });
     } catch (err) {
       console.error(err);
@@ -43,6 +44,7 @@ export default function Home() {
       setLoading(false);
     }
   };
+
 
   // Helper: convert confidence (0–1) → percent (0–100)
   const confPercent = result ? Math.round(result.confidence * 100) : 0;
