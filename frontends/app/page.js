@@ -183,7 +183,7 @@ export default function Home() {
         </a>{" "}
         |{" "}
         <a
-          href="https://github.com/yourusername/fraud-detector"
+          href="https://github.com/ManthanKaria"
           className="underline text-cyan-400 hover:text-cyan-500"
         >
           GitHub
