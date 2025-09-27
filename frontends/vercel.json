@@ -1,8 +1,5 @@
 {
-  "projects": [
-    {
-      "src": "frontends/my-app",
-      "use": "@vercel/next"
-    }
-  ]
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs"
 }

@@ -25,9 +25,15 @@ export default function Home() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post("http://127.0.0.1:8000/predict", {
-        description: text,
+      // const res = await axios.post("http://127.0.0.1:8000/predict", {
+      //   description: text,
+      // }
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/predict`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ description }),
       });
+
       const { fraudulent, confidence, cleaned_text } = res.data;
       setResult({ fraudulent, confidence, cleaned_text });
     } catch (err) {
