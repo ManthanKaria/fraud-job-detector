@@ -10,14 +10,14 @@ app = FastAPI(
     version="1.0.0",
 )
 
-origins = ["http://localhost:3000", "http://your-frontend-vercel-domain.app"]
+origins = ["http://localhost:3000", "https://fraud-job-detector-rust.vercel.app"]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",  # local Next.js dev
         "http://127.0.0.1:3000",  # alternate local
-        "https://your-frontend-vercel-domain.vercel.app",  # deployed frontend
+        "https://fraud-job-detector-rust.vercel.app",  # deployed frontend
     ],
     allow_credentials=True,
     allow_methods=["*"],
